@@ -1,0 +1,11 @@
+.all{
+    width: 100%;
+}
+.symbol{
+    padding-left: 50px;
+}
+.contents{
+    padding-top: 50px;
+    background-color: rgb(199, 159, 236);
+    
+}

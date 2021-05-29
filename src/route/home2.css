@@ -1,0 +1,39 @@
+html,body {height:100%; margin:0; padding:0;background-color: white;}
+
+#contents {min-height:100%;}
+
+.contanier{
+  background: #ffffff;
+  width: 1200px;
+  position: absolute;
+  background-size: cover;
+  margin: 0px;
+}
+.all{
+  background-color:#FFFFFF;
+  background-size: cover;
+  margin-left: 0px;
+  width: 100%;
+  padding-left: 50px;
+  
+  
+}
+.banner{
+  background-color: rgb(255, 255, 255);
+  width: 1200px;
+  height: 300px;
+  padding-top: 20px;
+}
+
+.stock_list{
+  background-color:rgb(231, 230, 230);
+  font-weight: 300;
+  padding: 20px;
+  margin-left: 50px;
+  margin-top: 20px;
+  height: 500px;
+  width:1200px;
+  margin-bottom: 50px;
+  
+ 
+}

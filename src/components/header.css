@@ -1,0 +1,43 @@
+
+.hd{
+    background-color:#ffffff;
+    width: 1200px;
+    height: 100px;
+    position: relative;
+    float: center;
+}
+.Hojo{
+    width: 100px;
+    margin-left: 100px;
+    margin-top: 10px;
+}
+.search{
+    position: relative;
+    float: left;
+    display: flex;
+    margin-left: 400px;
+    margin-top: -60px;
+    width: 350px;
+    background-color:#da5e5e;
+    padding-left: 0px;
+}
+.hd2{
+    position: relative;
+    top: -60px;
+    display: flex;
+}
+.hd2 a {
+    text-decoration: none;
+    color: #da5e5e;
+    text-transform: uppercase;
+    font-size: 20px;
+    text-align: center;
+    font-weight: 600;
+  }
+
+.element2{
+    padding-left: 900px;
+}
+.element3{
+    padding-left: 100px;
+}

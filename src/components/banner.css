@@ -1,0 +1,48 @@
+.all{
+    float: left;
+    position: relative;
+    margin-left: 50px;
+    
+}
+.KOSPI{
+    width: 320px;
+    background-color: rgb(231, 230, 230);
+    float: left;
+    height: 250px;
+}
+
+.KOSDAQ{
+    width: 320px;
+    background-color: rgb(231, 230, 230);
+    float: left;
+    margin-left: 50px;
+    height: 250px;
+}
+.NASDAQ{
+    width: 320px;
+    background-color: rgb(231, 230, 230);
+    float: left;
+    margin-left: 50px;
+    height: 250px;
+}
+.title{
+    padding-left: 20px;
+    padding-top: 5px;
+    padding-bottom: 0px;
+    width: 80px;
+    margin-top: 0px;
+    float: left;
+}
+.today{
+    float: left;
+    margin-top: 0px;
+    padding-top: 5px;
+    font-size: 13px;
+    color: rgb(247, 45, 9);
+    
+}
+.linechart{
+    width: 300px;
+    padding-top: -5px;
+    
+}
