@@ -44,9 +44,11 @@ class Banner extends React.Component{
 
         const kospi_today=this.state.KOSPI[9].close;
         //const kospi_yes=this.state.KOSDAQ[8].close;
+        const kosdaq_today=this.state.KOSDAQ[9].close;
+        const nasdaq_today=this.state.NASDAQ[9].close;
         const how = 0.3;
         return (
-            <div className="all">
+            <div className="allGraph">
                 <div className="KOSPI">
                         <p className="title">KOSPI</p><p className="today">{kospi_today}({how}%)</p>
                         <LineChart width={300} height={200} data={this.state.KOSPI} className="linechart">
@@ -56,7 +58,7 @@ class Banner extends React.Component{
                         </LineChart>           
                 </div>
                 <div className="KOSDAQ">
-                        <p className="title">KOSDAQ</p>
+                        <p className="title">KOSDAQ</p><p className="today">{kosdaq_today}({how}%)</p>
                         <LineChart width={300} height={200} data={this.state.KOSDAQ} className="linechart">
                             <XAxis dataKey = "Date"/><YAxis domain={[900,1000]}/>
                             <Tooltip/>

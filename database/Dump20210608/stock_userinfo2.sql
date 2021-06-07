@@ -16,26 +16,29 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `testt`
+-- Table structure for table `userinfo2`
 --
 
-DROP TABLE IF EXISTS `testt`;
+DROP TABLE IF EXISTS `userinfo2`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `testt` (
-  `userId` int NOT NULL,
-  `userN` varchar(45) NOT NULL,
-  PRIMARY KEY (`userId`)
+CREATE TABLE `userinfo2` (
+  `useremail` varchar(45) NOT NULL,
+  `userpassword` varchar(45) NOT NULL,
+  `username` varchar(45) NOT NULL,
+  `userphone` varchar(45) NOT NULL,
+  PRIMARY KEY (`useremail`,`userpassword`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `testt`
+-- Dumping data for table `userinfo2`
 --
 
-LOCK TABLES `testt` WRITE;
-/*!40000 ALTER TABLE `testt` DISABLE KEYS */;
-/*!40000 ALTER TABLE `testt` ENABLE KEYS */;
+LOCK TABLES `userinfo2` WRITE;
+/*!40000 ALTER TABLE `userinfo2` DISABLE KEYS */;
+INSERT INTO `userinfo2` VALUES ('aa','qq','abc군','000'),('byeornem@gmail.com','Dankook2021!','지윤','010'),('dasdasd@hotmail.com','Dankook2021!','a1','016'),('qweqe@hotmail.com','Dankook2021!','aasdasd','010');
+/*!40000 ALTER TABLE `userinfo2` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -47,4 +50,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-05-29 21:20:43
+-- Dump completed on 2021-06-08  6:09:50

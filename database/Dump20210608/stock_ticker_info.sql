@@ -36,7 +36,7 @@ CREATE TABLE `ticker_info` (
 
 LOCK TABLES `ticker_info` WRITE;
 /*!40000 ALTER TABLE `ticker_info` DISABLE KEYS */;
-INSERT INTO `ticker_info` VALUES ('AAPL','APPLE','https://blog.kakaocdn.net/dn/uqJpZ/btqyenBIIXx/mh1Cc5F023UGpfQTFBdqV0/img.jpg'),('AMZN','Amazon','https://blog.kakaocdn.net/dn/K1OeT/btqRoRMurfl/79ADEIWpDYCsIdq7YGB82k/img.png'),('BABA','Alibaba','https://blog.kakaocdn.net/dn/ZKcCY/btqzas9C6Qf/UclOb6NbVsKSiXd18uG301/img.jpg'),('FB','Facebook','https://t1.daumcdn.net/cfile/tistory/994EAB4F5D2565432F'),('MS','Micro Soft','https://image.rocketpunch.com/company/10839/microsoft_logo.png?s=400x400&t=inside');
+INSERT INTO `ticker_info` VALUES ('AAPL','APPLE','https://blog.kakaocdn.net/dn/uqJpZ/btqyenBIIXx/mh1Cc5F023UGpfQTFBdqV0/img.jpg'),('AMZN','Amazon','https://blog.kakaocdn.net/dn/K1OeT/btqRoRMurfl/79ADEIWpDYCsIdq7YGB82k/img.png'),('BABA','Alibaba','https://blog.kakaocdn.net/dn/ZKcCY/btqzas9C6Qf/UclOb6NbVsKSiXd18uG301/img.jpg'),('FB','Facebook','https://t1.daumcdn.net/cfile/tistory/994EAB4F5D2565432F'),('GOOG','Google','https://img1.daumcdn.net/thumb/R1280x0.fjpg/?fname=http://t1.daumcdn.net/brunch/service/user/5rH/image/aFrEyVpANu07FvoBZQbIB4aF_uc'),('MS','Micro Soft','https://image.rocketpunch.com/company/10839/microsoft_logo.png?s=400x400&t=inside'),('WMT','Walmart Inc','https://lh3.googleusercontent.com/proxy/KibFyhr7E5AfgTYjQK_D5QuSC2jVM6iseshWuPCy25FQHirP_-k8Ooy54uENQfy6iNg6yZnYlRDntfyGQ4F55LL_Hq0DAjDLQ8D5Z2s21lsoryFqZwcNFyuIrnr9y76eYDBFgKyHzb5V_1zvkBQZ41GTZgVrri55lkJmPkex_61AnJZnJxm7tfFpcHRhV6NzpUhTOT2jmhjaYjCODGR6H0FjqHZ1b_ROGbvYA0nkfiZpynQ25KCCVw');
 /*!40000 ALTER TABLE `ticker_info` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -49,4 +49,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-05-29 21:20:41
+-- Dump completed on 2021-06-08  6:09:48

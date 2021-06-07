@@ -6,8 +6,8 @@ import Header from "../components/header";
 class Board extends React.Component{
     state = {
         boardContent:[{title:''}],
-        title:'1',
-        content:'cat'
+        title:'',
+        content:''
     };
     
     getValue1 = e =>{

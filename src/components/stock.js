@@ -9,7 +9,7 @@ function Stock({symbol,img}){
         <div className="stock">
         <Link to ={{pathname: `/ticker=${symbol}`,state:{symbol}}}>
         <div className = "stock_data">
-            <div className="st_img"><img src={img} className="logo"/></div>
+            <div className="st_img"><img src={img} alt = "sorry" className="logo"/></div>
             {symbol}
             
             

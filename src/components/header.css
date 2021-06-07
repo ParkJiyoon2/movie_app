@@ -18,13 +18,15 @@
     margin-left: 400px;
     margin-top: -60px;
     width: 350px;
-    background-color:#da5e5e;
+    height: 80px;
     padding-left: 0px;
+    z-index: 5; /*이거 없으면 search자동완성 맨뒤로감*/
 }
 .hd2{
     position: relative;
     top: -60px;
     display: flex;
+    z-index: 2;
 }
 .hd2 a {
     text-decoration: none;
@@ -36,7 +38,7 @@
   }
 
 .element2{
-    padding-left: 900px;
+    padding-left: 100px;
 }
 .element3{
     padding-left: 100px;

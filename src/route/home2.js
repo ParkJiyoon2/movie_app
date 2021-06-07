@@ -15,8 +15,8 @@ class Home2 extends React.Component {
   useEffect = ()=>{
     console.log("useEffect start")
     axios.get('http://localhost:8000/api/Stock').then((response)=>{
-      console.log("finish");
-      console.log(response.data);
+    console.log('stockdata:',response);  
+    console.log('stockdata.data:',response.data);
       this.setState({stocks:response.data});
     })
 }
@@ -34,13 +34,15 @@ class Home2 extends React.Component {
           </div>
         ) : (
           <div className="all">
-            <Header/>
+            <div className="header"><Header/></div>
             <div className="banner"><Banner/></div>
+           
           <div className="stock_list">
+            
             {stocks.map(st => (
               <Stock key={st.symbol} symbol = {st.symbol} img={st.image}/>
             ))}
-            
+           
           </div></div>
         )}
       </section>

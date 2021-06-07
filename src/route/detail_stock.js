@@ -61,13 +61,16 @@ class Detail_stock extends React.Component{
                     <div className="contents">
                         <h1 className="symbol">{location.state.symbol}</h1>
                         <div className="graph">
-                        <LineChart width={1000} height={300} data={daily2}>
+                        <LineChart width={800} height={300} data={daily2}>
                             <CartesianGrid strokeDasharray = "3 3"/>
                             <XAxis dataKey = "date"/><YAxis/>
                             <Tooltip/>
                             <Legend/>
                             <Line type = "monotone" dataKey = "close"></Line>
                         </LineChart>
+                    </div>
+                    <div className="article">
+                        article    
                     </div>                    
    
                     </div>

@@ -16,28 +16,27 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `userinfo`
+-- Table structure for table `review`
 --
 
-DROP TABLE IF EXISTS `userinfo`;
+DROP TABLE IF EXISTS `review`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `userinfo` (
-  `userId` int NOT NULL,
-  `userName` varchar(45) NOT NULL,
-  `userEmail` varchar(100) NOT NULL,
-  PRIMARY KEY (`userId`)
+CREATE TABLE `review` (
+  `title` varchar(45) NOT NULL,
+  `content` varchar(45) NOT NULL,
+  PRIMARY KEY (`title`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `userinfo`
+-- Dumping data for table `review`
 --
 
-LOCK TABLES `userinfo` WRITE;
-/*!40000 ALTER TABLE `userinfo` DISABLE KEYS */;
-INSERT INTO `userinfo` VALUES (1000,'cat','cat@naver.com'),(2000,'dog','dog@naver.com');
-/*!40000 ALTER TABLE `userinfo` ENABLE KEYS */;
+LOCK TABLES `review` WRITE;
+/*!40000 ALTER TABLE `review` DISABLE KEYS */;
+INSERT INTO `review` VALUES ('신제품 출시해서 오를듯','화이팅'),('애플 사신분','주식왕'),('언제오를까요','주식왕'),('요즘 경제가...','55555');
+/*!40000 ALTER TABLE `review` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -49,4 +48,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-05-29 21:20:43
+-- Dump completed on 2021-06-08  6:09:49

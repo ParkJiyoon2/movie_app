@@ -6,6 +6,16 @@
 }
 .contents{
     padding-top: 50px;
-    background-color: rgb(199, 159, 236);
-    
+    background-color: rgb(255, 255, 255);
+    width: 900px;
+    float: left;
+}
+.article{
+    float: left;
+    width: 400px;
+    height: 300px;
+    background-color: rgb(204, 204, 207);
+    margin-left: 950px;
+    margin-top: -250px;
+
 }

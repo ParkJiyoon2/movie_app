@@ -16,38 +16,28 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `appl`
+-- Table structure for table `userstock`
 --
 
-DROP TABLE IF EXISTS `appl`;
+DROP TABLE IF EXISTS `userstock`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `appl` (
-  `open` double NOT NULL,
-  `high` double NOT NULL,
-  `low` double NOT NULL,
-  `close` double NOT NULL,
-  `volume` double DEFAULT NULL,
-  `adj_high` double DEFAULT NULL,
-  `adj_low` double DEFAULT NULL,
-  `adj_close` double DEFAULT NULL,
-  `adj_open` double DEFAULT NULL,
-  `adj_volume` double DEFAULT NULL,
-  `split_factor` double DEFAULT NULL,
+CREATE TABLE `userstock` (
+  `userId` varchar(45) NOT NULL,
   `symbol` varchar(45) NOT NULL,
-  `exchange` varchar(45) DEFAULT NULL,
-  `date` date NOT NULL,
-  PRIMARY KEY (`date`,`symbol`)
+  `stockCount` int DEFAULT '0',
+  PRIMARY KEY (`userId`,`symbol`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `appl`
+-- Dumping data for table `userstock`
 --
 
-LOCK TABLES `appl` WRITE;
-/*!40000 ALTER TABLE `appl` DISABLE KEYS */;
-/*!40000 ALTER TABLE `appl` ENABLE KEYS */;
+LOCK TABLES `userstock` WRITE;
+/*!40000 ALTER TABLE `userstock` DISABLE KEYS */;
+INSERT INTO `userstock` VALUES ('1000','AAPL',2),('1000','MS',3),('byeornem@gmail.com','AAPL',1);
+/*!40000 ALTER TABLE `userstock` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -59,4 +49,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-05-29 21:20:43
+-- Dump completed on 2021-06-08  6:09:49

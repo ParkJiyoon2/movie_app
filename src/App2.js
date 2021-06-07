@@ -8,9 +8,13 @@ import Board from "./route/board"
 import Graph2 from "./route/graph2"
 import Header from "./components/header"
 import Banner from "./components/banner"
-
+import searchApp from "./search/searchApp"
+//import Login from "./login/login"
+import Register from "./login/register"
+import Login from "./login/login"
 
 import Line from "./line"
+import MyPage from "./route/mypage"
 
 function App(){
     return (
@@ -21,10 +25,16 @@ function App(){
         <Route path="/" exact = {true} component={Home2}/>
         <Route path="/about" component={About}/>
         <Route path="/ticker=:id" component={Detail_stock} />
-        <Route path="/Banner" component={Banner} />
+        
         <Route path="/Graph" component={Graph} />
         <Route path="/Board" component={Board} />
         <Route path="/Graph2" component={Graph2} />
+        <Route path="/SearchApp" component={searchApp} />
+        
+        <Route path="/Register" component={Register}/>
+        <Route path="/Login" component={Login}/>
+
+        <Route path="/MyPage" component={MyPage}/>
     </BrowserRouter>
     </div>
     );

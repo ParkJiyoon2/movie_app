@@ -1,0 +1,18 @@
+.re1_wrap{ padding: 70px; box-sizing: border-box; float: left;width: 1000px;padding-left: 10px;padding-top: 10px;}
+.re1_wrap .table_ty1 tr th{width: 170px; text-align: left; border: 0; letter-spacing: -0.03em; font-size: 16px;}
+.re1_wrap .table_ty1 tr td{height: 45px; padding: 14px 0; text-align: left; font-size: 16px; width: 900px;}
+.re1_wrap .table_ty1 tr td input,
+.re1_wrap .table_ty1 tr td select{width: 552px; height: 45px; line-height: 43px; box-sizing: border-box; border: 1px solid #ddd; padding: 0 20px; font-size: 15px; }
+.re1_wrap .table_ty1 tr.re_email td input,
+.re1_wrap .table_ty1 tr.re_email td select{width: 257px !important;}
+.re1_wrap .table_ty1 tr td select{color: #cdcdcd; transition:.3s;}
+.re1_wrap .table_ty1 tr td select.on{color: #606060;}
+.e_goll{width: 37px;font-size: 16px; color: #606060; padding: 0 9px;}
+.re1_wrap .table_ty1 tr.tr_tel td input,
+.re1_wrap .table_ty1 tr.tr_tel td select{ width: 170px !important; }
+.tel_dot{font-size: 20px; color: #606060; width: 15px; display: inline-block; text-align: center;}
+.btn_confirm{text-align: right;}
+.btn_confirm a:last-child{margin-right: 0;}
+
+.bt_ty2_1{background: 0; border: 1px solid #dedede; color: #606060;}
+.bt_ty2_1:hover{background: #2b62c6; color: #fff;}

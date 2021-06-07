@@ -16,32 +16,38 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `kosdaq`
+-- Table structure for table `appl`
 --
 
-DROP TABLE IF EXISTS `kosdaq`;
+DROP TABLE IF EXISTS `appl`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `kosdaq` (
-  `close` double DEFAULT NULL,
-  `open` double DEFAULT NULL,
-  `high` double DEFAULT NULL,
-  `low` double DEFAULT NULL,
+CREATE TABLE `appl` (
+  `open` double NOT NULL,
+  `high` double NOT NULL,
+  `low` double NOT NULL,
+  `close` double NOT NULL,
   `volume` double DEFAULT NULL,
-  `change` double DEFAULT NULL,
-  `Date` date NOT NULL,
-  PRIMARY KEY (`Date`)
+  `adj_high` double DEFAULT NULL,
+  `adj_low` double DEFAULT NULL,
+  `adj_close` double DEFAULT NULL,
+  `adj_open` double DEFAULT NULL,
+  `adj_volume` double DEFAULT NULL,
+  `split_factor` double DEFAULT NULL,
+  `symbol` varchar(45) NOT NULL,
+  `exchange` varchar(45) DEFAULT NULL,
+  `date` date NOT NULL,
+  PRIMARY KEY (`date`,`symbol`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `kosdaq`
+-- Dumping data for table `appl`
 --
 
-LOCK TABLES `kosdaq` WRITE;
-/*!40000 ALTER TABLE `kosdaq` DISABLE KEYS */;
-INSERT INTO `kosdaq` VALUES (966.72,953.91,967.18,953.91,1560000000,0.015700000000000002,'2021-05-14'),(962.5,968.02,973.35,958.64,1460000000,-0.0044,'2021-05-17'),(969.1,962.83,969.79,959.98,1420000000,0.0069,'2021-05-18'),(971.13,968.35,971.62,962.78,1530000000,0.0021,'2021-05-20'),(965.63,972.3,979.37,965.55,1530000000,-0.005699999999999999,'2021-05-21'),(948.37,965.23,965.23,948.37,1540000000,-0.0179,'2021-05-24'),(962.07,949.78,963.4,949.78,1680000000,0.0144,'2021-05-25'),(966.06,962.69,967.49,962.69,1940000000,0.0040999999999999995,'2021-05-26'),(974.08,967.01,974.29,960.64,1850000000,0.0083,'2021-05-27'),(977.46,974.55,979.59,973.76,1580000000,0.0034999999999999996,'2021-05-28');
-/*!40000 ALTER TABLE `kosdaq` ENABLE KEYS */;
+LOCK TABLES `appl` WRITE;
+/*!40000 ALTER TABLE `appl` DISABLE KEYS */;
+/*!40000 ALTER TABLE `appl` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -53,4 +59,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-05-29 21:20:42
+-- Dump completed on 2021-06-08  6:09:48

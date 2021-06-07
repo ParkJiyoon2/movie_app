@@ -16,32 +16,29 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `nasdaq`
+-- Table structure for table `userinfo`
 --
 
-DROP TABLE IF EXISTS `nasdaq`;
+DROP TABLE IF EXISTS `userinfo`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `nasdaq` (
-  `close` double DEFAULT NULL,
-  `open` double DEFAULT NULL,
-  `high` double DEFAULT NULL,
-  `low` double DEFAULT NULL,
-  `volume` double DEFAULT NULL,
-  `change` double DEFAULT NULL,
-  `Date` date NOT NULL,
-  PRIMARY KEY (`Date`)
+CREATE TABLE `userinfo` (
+  `userId` int NOT NULL,
+  `userName` varchar(45) NOT NULL,
+  `userEmail` varchar(100) NOT NULL,
+  `password` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`userId`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `nasdaq`
+-- Dumping data for table `userinfo`
 --
 
-LOCK TABLES `nasdaq` WRITE;
-/*!40000 ALTER TABLE `nasdaq` DISABLE KEYS */;
-INSERT INTO `nasdaq` VALUES (13379.05,13368.8,13399.17,13265.4,799860000,-0.0038,'2021-05-17'),(13303.64,13416.9,13485.34,13299.92,852730000,-0.005600000000000001,'2021-05-18'),(13299.74,13078.19,13304.61,13072.23,879280000,-0.0003,'2021-05-19'),(13535.74,13356.63,13563.52,13355.71,810410000,0.0177,'2021-05-20'),(13470.99,13616.19,13616.58,13463.26,786550000,-0.0048,'2021-05-21'),(13661.17,13557.21,13708.85,13551.01,730820000,0.0141,'2021-05-24'),(13657.17,13721.54,13751.14,13631.8,823660000,-0.0003,'2021-05-25'),(13738,13693.94,13750.16,13679.59,819710000,0.0059,'2021-05-26'),(13736.28,13742.58,13776.52,13701.63,1410000000,-0.0001,'2021-05-27'),(13748.74,13792.05,13820.87,13747.61,911240000,0.0009,'2021-05-28');
-/*!40000 ALTER TABLE `nasdaq` ENABLE KEYS */;
+LOCK TABLES `userinfo` WRITE;
+/*!40000 ALTER TABLE `userinfo` DISABLE KEYS */;
+INSERT INTO `userinfo` VALUES (1000,'cat','cat@naver.com','1111'),(2000,'dog','dog@naver.com','2222');
+/*!40000 ALTER TABLE `userinfo` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -53,4 +50,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-05-29 21:20:42
+-- Dump completed on 2021-06-08  6:09:50
