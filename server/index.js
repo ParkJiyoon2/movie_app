@@ -70,7 +70,12 @@ app.get("/api/getDB", (req, res)=>{
         res.send(result);
     });
 });
-
+app.get("/api/news", (req, res)=>{
+    const sqlQuery = "SELECT * FROM summarynews;";
+    db.query(sqlQuery, (err, result)=>{
+        res.send(result);
+    });
+});
 app.post("/api/userStock", (req, res)=>{
     console.log('req:',req.body);
     const id = req.body.userid;

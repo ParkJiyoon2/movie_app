@@ -8,9 +8,7 @@ import $ from 'jquery';
 import Swal from 'sweetalert2';
 
 class Header extends React.Component{
-state = {
-
-}
+state = {}
   logout = async e => {
     cookie.remove('useremail', { path: '/'});
     cookie.remove('username', { path: '/'});
@@ -18,10 +16,7 @@ state = {
     window.location.href = '/';
     console.log('logout');
 }
-
-componentDidMount(){
-  
-}
+componentDidMount(){}
   render(){
     var cookie_useremail = cookie.load('useremail')
     var cookie_username = cookie.load('username')

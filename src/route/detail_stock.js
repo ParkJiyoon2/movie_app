@@ -10,7 +10,8 @@ class Detail_stock extends React.Component{
     state ={
         isLoading:true,
         symbol:'initial',
-        daily:[{date:''}]
+        daily:[{date:''}],
+        news:[]
     } 
     useEffect = ()=>{
         console.log("useEffect start")
@@ -20,7 +21,13 @@ class Detail_stock extends React.Component{
           this.setState({stocks:response.data});
         })
     }
-    
+    useEffect2 = ()=>{
+        console.log("useEffect start")
+        axios.get('http://localhost:8000/api/news').then((response)=>{
+        console.log('stockdata.data:',response.data);
+          this.setState({news:response.data});
+        })
+      }
     getDaily =  async(symbol) =>{
         console.log("getDaily start");
         await axios.get(
@@ -39,6 +46,7 @@ class Detail_stock extends React.Component{
     componentDidMount(){
         const {location} = this.props;
         this.getDaily(location.state.symbol);
+        this.useEffect2();
     }
 
     render(){
@@ -70,7 +78,10 @@ class Detail_stock extends React.Component{
                         </LineChart>
                     </div>
                     <div className="article">
-                        article    
+                    <p>뉴스 기사</p>
+              {this.state.news.map(ns => (<div className="oneNews"><a href={ns.newsLink}><p className="p_news">{ns.newsSummary}</p></a></div>))}
+
+           
                     </div>                    
    
                     </div>

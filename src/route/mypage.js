@@ -7,6 +7,7 @@ import Swal from 'sweetalert2';
 import $ from 'jquery';
 import ReactDom from 'react-dom';
 import "./mypage.css"
+import SearchApp from "../search/searchApp"
 
 
 class MyPage extends React.Component{
@@ -47,11 +48,8 @@ class MyPage extends React.Component{
               
             })
             
-        })
-
-        
+        })   
     }
-
 
     componentDidMount(){
         const {location} = this.props;
@@ -135,6 +133,7 @@ class PopupContent extends React.Component {
                 avg_cost: this.avg_cost,
                 count:this.count
             })
+            window.location.href="/myPage"
         }
     }
     
@@ -149,6 +148,7 @@ class PopupContent extends React.Component {
                                 <input id="useremail" placeholder={this.props.useremail} value={this.props.useremail}/>
                             </div>
                             <div className="add_ty1">
+                            
                                 <input type="text" id="symbol" placeholder="종목" />
                             </div>
                             <div  className="add_ty1">

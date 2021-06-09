@@ -92,3 +92,10 @@
     padding-top: 5px;
     border-radius: 5px;
 }
+.oneNews{
+    width: 300px;
+    background-color: #9a9a9a;
+    float: left;
+    margin-left: 50px;
+    padding-top: 100px;
+}
