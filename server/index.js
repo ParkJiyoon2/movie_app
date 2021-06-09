@@ -80,7 +80,19 @@ app.post("/api/userStock", (req, res)=>{
         res.send(result);
     });
 });
-
+app.post("/api/insertUserStock", (req, res)=>{
+    console.log('req:',req.body);
+    const email = req.body.useremail;
+    const symbol = req.body.symbol;
+    const count = req.body.count;
+    const avg_cost = req.body.avg_cost;
+    const sqlQuery = "insert into userstock values(?,?,?,?);";
+    console.log('sqlQuery:',sqlQuery);
+    db.query(sqlQuery, [email,symbol,count, avg_cost],(err, result)=>{
+        res.send(result);
+        console.log('sqlQuery2:',sqlQuery);
+    });
+});
 app.post("/api/login", (req, res) => {
     const email = req.body.is_Email;
     const pw = req.body.is_Password;

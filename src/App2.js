@@ -16,6 +16,8 @@ import Login from "./login/login"
 import Line from "./line"
 import MyPage from "./route/mypage"
 
+import Popup from "./route/popup"
+
 function App(){
     return (
         <div>
@@ -35,6 +37,8 @@ function App(){
         <Route path="/Login" component={Login}/>
 
         <Route path="/MyPage" component={MyPage}/>
+
+        <Route path="/PopUp" component={Popup}/>
     </BrowserRouter>
     </div>
     );

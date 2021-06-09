@@ -36,7 +36,7 @@ const SearchBar = ({ res, keyword, updateField }) => {
       </button>
       <input
         className="search-bar"
-        placeholder="회사명이나 symbol을 입력하세요"
+        placeholder="회사명을 입력하세요"
         value={keyword}
         onChange={e => updateField("keyword", e.target.value)}
       />

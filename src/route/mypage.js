@@ -3,21 +3,31 @@ import axios from "axios";
 import { symbol } from "prop-types";
 import cookie from 'react-cookies';
 import Header from "../components/header";
+import Swal from 'sweetalert2';
+import $ from 'jquery';
+import ReactDom from 'react-dom';
 import "./mypage.css"
 
 
 class MyPage extends React.Component{
+
     state ={
         userid:'',
         username:'',
-        userstock:[]
-
+        userstock:[],
+        isOpenPopup:false
     } 
+    openPopup = () =>{
+        this.setState({isOpenPopup: true})
+    }
+ 
+    closePopup = ()=>{
+        this.setState({isOpenPopup: false,})
+    }
     useEffect = async()=>{
         var cookie_useremail = cookie.load('useremail')
         var cookie_username = cookie.load('username')
         var cookie_password = cookie.load('userpassword');
-        
         
         axios.post('http://localhost:8000/api/SessionConfirm', {
             token1: cookie_useremail,
@@ -34,7 +44,6 @@ class MyPage extends React.Component{
               console.log("userEffect2!!!.data", response.data);
               
               this.setState({userstock:response.data})
-              //this.setState({what:response.data});
               
             })
             
@@ -48,14 +57,13 @@ class MyPage extends React.Component{
         const {location} = this.props;
         console.log('myPage:',location);
         this.useEffect();
-        //this.useEffect2(); 
     }
 
     render(){
         var username = this.state.username;
+        var useremail = this.state.useremail;
         console.log('thisState:',this.state);
         if(cookie.load('useremail')== undefined){
-            //console.log
             window.location.href="/login";
         };
         return(
@@ -67,15 +75,28 @@ class MyPage extends React.Component{
                     <div className="mypage_stocks">
 
                     <p className="mypage_text">보유 주식</p>
-                    
                         {this.state.userstock.map(st => 
                             <div className="mypage_onestock"> 
                             <img src = {st.image} className="mypage_image"></img><p className="stname">{st.name}</p>
                             <p className="stcount">수량:{st.stockCount}</p>
-                            <p>현재가:             구매가:</p>
+                            <p className="purchaseCost">구매가:{st.stockPurchaseCost}     </p>
                             </div>
-                    )}</div>
-                    
+                    )}
+                <div>
+                    <button type="button"
+                            id="popupDom"
+                            onClick={this.openPopup} className="add_btn1"
+                    >
+                        추가
+                    </button>
+                    {this.state.isOpenPopup &&
+                        <PopupDom>
+                            <PopupContent onClose={this.closePopup} useremail={this.state.useremail}/>
+                        </PopupDom>
+                    }
+                </div>
+            
+                    </div>
                     
                 </div>
             </div>
@@ -84,6 +105,67 @@ class MyPage extends React.Component{
 
     }
 }
+const PopupDom = ({ children }) => {
+    const el = document.getElementById('popupDom');
+    return ReactDom.createPortal(children, el);
+};
 
+class PopupContent extends React.Component {
+    state={
+        useremail:''
+    }
+    submitClick = (e) => {
+        this.useremail = $('#useremail').val();
+        this.symbol = $('#symbol').val();
+        this.count = $('#count').val();
+        this.avg_cost = $('#avg_cost').val();
+        
+        console.log('--------------------email:',this.useremail);
+        if(this.symbol === '' || this.avg_cost === '' || this.count == ''){
+            Swal.fire({
+                title: '빈 칸이 있습니다',
+                text: '',
+                icon: 'info',
+                confirmButtonText: '닫기'
+              })
+        }else{
+            axios.post('http://localhost:8000/api/insertUserStock', {
+                useremail:this.useremail,
+                symbol: this.symbol,
+                avg_cost: this.avg_cost,
+                count:this.count
+            })
+        }
+    }
+    
+    render(){
+        //var useremail = {this.useremail}
+        return(
+                <div className="full_layer">
+                    <div className="common_alert"> 
+                        
+                        <div className="add_box">
+                            <div className="add_ty0">
+                                <input id="useremail" placeholder={this.props.useremail} value={this.props.useremail}/>
+                            </div>
+                            <div className="add_ty1">
+                                <input type="text" id="symbol" placeholder="종목" />
+                            </div>
+                            <div  className="add_ty1">
+                                <input type="text" id="avg_cost" placeholder="평균단가" />
+                            </div>
+                            <div  className="add_ty1">
+                                <input type="text" id="count" placeholder="개수" />
+                            </div>
+                            <button className="add_btn2" type="button" onClick={(e) => this.submitClick(e)}>입력</button>
+                        </div>
+                    </div>
+                    <div>
+                        <button type="button" onClick={this.props.onClose} className="cancel_btn">취소</button>
+                    </div>
+                </div>
+                
+        )}
+}
 
 export default MyPage;
