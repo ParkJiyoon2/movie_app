@@ -1,5 +1,4 @@
 import React from "react";
-import propTypes from "prop-types";
 import './stock.css';
 import { Link } from "react-router-dom";
 

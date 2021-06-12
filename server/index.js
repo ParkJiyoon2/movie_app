@@ -8,14 +8,21 @@ const { urlencoded } = require('body-parser');
 let jwt = require("jsonwebtoken");
 let secretObj = require("../src/login/ignorefile/jwt")
 
-const PORT = process.env.port || 8000;
+//const PORT = process.env.port || 8000;
+const PORT = process.env.port || 3306;
 
 const db = mysql.createPool({
-    host: "localhost",
-    user: "user2",
-    password: "7402",
-    database: "stock"
+    //host: "localhost",
+    host :"stockdb.cirwzwbmpeyo.ap-northeast-2.rds.amazonaws.com",
+    //user: "user2",
+    user:"admin",
+    //password: "7402",
+    password:"88477402",
+    //database: "stock"
+    database:"react",
+    //PORT:"3306"
 });
+
 
 app.use(cors());
 app.use(express.json());
@@ -181,3 +188,5 @@ app.post("/api/SessionConfirm", (req, res) => {
 app.listen(PORT, () => {
     console.log(`running on port ${PORT}`);
 });
+
+module.exports = router;

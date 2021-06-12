@@ -4,8 +4,7 @@ import "./header.css";
 import imgB from "./logo.png"
 import SearchApp from "../search/searchApp"
 import cookie from 'react-cookies';
-import $ from 'jquery';
-import Swal from 'sweetalert2';
+
 
 class Header extends React.Component{
 state = {}

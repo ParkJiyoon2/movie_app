@@ -1,6 +1,5 @@
 import React from "react";
 import axios from "axios";
-import { symbol } from "prop-types";
 import {LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend} from 'recharts';
 import Header from "../components/header";
 import "./detail_stock.css"
@@ -67,7 +66,7 @@ class Detail_stock extends React.Component{
                 <div className="all">
                     <Header/>
                     <div className="contents">
-                        <h1 className="symbol">{location.state.symbol}</h1>
+                        <h1 className="symbol">{location.state.symbol}</h1> <h2></h2>
                         <div className="graph">
                         <LineChart width={800} height={300} data={daily2}>
                             <CartesianGrid strokeDasharray = "3 3"/>
@@ -79,9 +78,7 @@ class Detail_stock extends React.Component{
                     </div>
                     <div className="article">
                     <p>뉴스 기사</p>
-              {this.state.news.map(ns => (<div className="oneNews"><a href={ns.newsLink}><p className="p_news">{ns.newsSummary}</p></a></div>))}
-
-           
+                            {this.state.news.map(ns => (<div className="oneNews"><a href={ns.newsLink}><p className="p_news">{ns.newsSummary}</p></a></div>))}
                     </div>                    
    
                     </div>
